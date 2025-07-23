@@ -60,15 +60,11 @@ To create a robust, reusable, and automated **ETL (Extract, Transform, Load)** p
 
 - Saved the cleaned and transformed data into a new CSV file:
 
-## 📦 Folder Structure
-
 netflix-data-pipeline-codtech/
-│
-├── netflix_etl_pipeline.ipynb # Jupyter notebook containing the full ETL process
-├── cleaned_netflix_data.csv # Final cleaned dataset after transformation
-├── requirements.txt # List of required Python packages
-└── README.md # Project overview and documentation
-
+├── README.md
+├── requirements.txt
+├── netflix_etl_pipeline.ipynb
+├── processed_netflix_titles.csv         # (Output: final cleaned dataset)
 ---
 
 ## 📌 Installation & Usage
