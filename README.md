@@ -1,80 +1,82 @@
-# 📊 Data Pipeline Development – CodTech Internship Task 1
+# 📊 Task 1: Data Pipeline Development – CODTECH Internship
 
-This repository contains my submission for **Task 1: Data Pipeline Development** as part of the **CodTech Internship**.  
-I developed a complete **ETL (Extract, Transform, Load) pipeline** using **Python**, **Pandas**, and **Scikit-learn** on a real-world Netflix dataset.
+This project is part of my internship at **CODTECH**, where the goal was to design and implement a **Data Pipeline** that automates **data extraction**, **preprocessing**, **transformation**, and **loading** using Python libraries like **Pandas** and **Scikit-learn**.
 
----
-
-## 📌 Project Overview
-
-🔹 **Objective**: Automate the end-to-end process of extracting raw data, cleaning and transforming it, and saving the final processed output.  
-🔹 **Task Name**: Data Pipeline Development (Task 1)  
-🔹 **Internship**: CodTech  
-🔹 **Tech Stack**: Python, Pandas, Scikit-learn  
-🔹 **Dataset**: Netflix Titles Dataset (from PrasertCbs GitHub)
+We use the **Netflix Titles Dataset** and perform comprehensive ETL steps to prepare the data for further analysis or modeling.
 
 ---
 
-## 🗃️ Files Included
+## 🎯 Objective
 
-| File                             | Description                                      |
-|----------------------------------|--------------------------------------------------|
-| `netflix_etl_pipeline.ipynb`     | Jupyter Notebook with the full ETL pipeline      |
-| `processed_netflix_titles.csv`   | Cleaned and transformed output dataset           |
-| `README.md`                      | Project documentation and explanation            |
+To create a robust, reusable, and automated **ETL (Extract, Transform, Load)** pipeline using Python that:
 
----
-
-## 🔄 ETL Pipeline Summary
-
-### ✅ 1. **Extract**
-- Loaded Netflix dataset from a trusted GitHub source
-- Inspected structure and null values
-
-### ✅ 2. **Transform**
-- Cleaned missing values in `country`, `rating`, `director`
-- Parsed `date_added` into datetime format
-- Feature engineered new columns: `year_added`, `month_added`, `duration_int`, `duration_type`
-- Label encoded `type`, `rating`
-- Scaled numerical features using `StandardScaler`
-- Removed duplicates
-
-### ✅ 3. **Load**
-- Saved the cleaned and transformed dataset to a CSV file: `processed_netflix_titles.csv`
+- Extracts data from a trusted source
+- Cleans and preprocesses the data
+- Transforms features for machine learning readiness
+- Saves the cleaned dataset for further use
 
 ---
 
-## 📊 Dataset Source
+## 📂 Dataset Used
 
-- 📂 [Netflix Titles Dataset (GitHub)](https://raw.githubusercontent.com/prasertcbs/basic-dataset/master/netflix_titles.csv)
-
----
-
-## ⚙️ Tools & Technologies
-
-- Python 3.x  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Jupyter Notebook
+- **Source:** [Netflix Titles Dataset](https://raw.githubusercontent.com/prasertcbs/basic-dataset/master/netflix_titles.csv)
+- **Type:** CSV file hosted on GitHub
+- **Description:** Contains data about Netflix TV shows and movies available for streaming.
 
 ---
 
-## 🙋‍♀️ About Me
+## 🛠️ Tools and Libraries
 
-👩‍💻 **Sanjli Agarwal**  
-🎓 B.Tech CSE (Data Science Minor) – NIET, Greater Noida  
-🔗 [LinkedIn](https://www.linkedin.com/in/your-profile/) *(Add your actual link)*
-
----
-
-## 📌 Status
-
-✅ **Task 1 – Data Pipeline Development**: Completed  
-🔜 Task 2: Coming soon...
+- **Python 3**
+- **Pandas** – for data manipulation
+- **NumPy** – for numerical operations
+- **Scikit-learn** – for encoding and scaling
+- **Jupyter Notebook** – for step-by-step execution
 
 ---
 
-## 📎 Tags
+## 🔁 Workflow Steps
 
-`#DataPipeline` `#ETL` `#Python` `#Pandas` `#Sklearn` `#NetflixDataset` `#DataAnalytics` `#CodTechInternship`
+### 1. Data Extraction
+
+- Loaded the dataset directly from a raw GitHub CSV URL using `pandas.read_csv()`.
+
+### 2. Data Preprocessing
+
+- Checked for missing/null values and handled them:
+  - Filled or dropped based on relevance
+- Removed duplicate records
+- Converted `date_added` to datetime format
+- Extracted useful features like `year_added` and `month_added` from `date_added`
+
+### 3. Data Transformation
+
+- **One-Hot Encoding** of categorical features (like `type`, `rating`)
+- **Label Encoding** where appropriate (e.g., country)
+- **Feature Scaling** on numerical columns (if any)
+- Cleaned and normalized the dataset for further use
+
+### 4. Data Loading
+
+- Saved the cleaned and transformed data into a new CSV file:
+
+## 📦 Folder Structure
+
+netflix-data-pipeline-codtech/
+│
+├── netflix_etl_pipeline.ipynb # Jupyter notebook containing the full ETL process
+├── cleaned_netflix_data.csv # Final cleaned dataset after transformation
+├── requirements.txt # List of required Python packages
+└── README.md # Project overview and documentation
+
+---
+
+## 📌 Installation & Usage
+
+To run the project locally:
+
+```bash
+git clone https://github.com/your-username/netflix-data-pipeline-codtech.git
+cd netflix-data-pipeline-codtech
+pip install -r requirements.txt
+jupyter notebook netflix_etl_pipeline.ipynb
